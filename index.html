@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uncle Rudy — The tasks app that roasts you into getting things done</title>
+  <meta name="description" content="Built for iOS 27. The tasks app that roasts you into getting things done with on-device intelligence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="brand">
+        <div class="brand__icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="url(#rudyGrad)"/>
+            <path d="M14 21C14 14.5 18.5 10 24 10C29.5 10 34 14.5 34 21V28C34 33.5 29.5 38 24 38C18.5 38 14 33.5 14 28V21Z" fill="#F2B8A2"/>
+            <path d="M13 18C12 18 11.5 20 12 22.5C12.5 24 14 24 14 24V18H13Z" fill="#3B231E"/>
+            <path d="M35 18C36 18 36.5 20 36 22.5C35.5 24 34 24 34 24V18H35Z" fill="#3B231E"/>
+            <circle cx="19.5" cy="22" r="4.2" fill="#FFFFFF" stroke="#1E1E24" stroke-width="1.8"/>
+            <circle cx="28.5" cy="22" r="4.2" fill="#FFFFFF" stroke="#1E1E24" stroke-width="1.8"/>
+            <line x1="23.7" y1="22" x2="24.3" y2="22" stroke="#1E1E24" stroke-width="1.8"/>
+            <circle cx="20" cy="22.5" r="1.1" fill="#1E1E24"/>
+            <circle cx="28" cy="22.5" r="1.1" fill="#1E1E24"/>
+            <path d="M15.5 17.5L22.5 19" stroke="#3B231E" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M32.5 17.5L25.5 19" stroke="#3B231E" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M20.5 31.5C22 30 26 30 27.5 31.5" stroke="#5A2D27" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 44C12 39 17 37 24 37C31 37 36 39 36 44V48H12V44Z" fill="#6D4685"/>
+            <defs>
+              <linearGradient id="rudyGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF6B35"/>
+                <stop offset="1" stop-color="#D9381E"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="brand__name">Uncle Rudy</span>
+      </a>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#story" class="nav-link">The Story</a>
+        <a href="#community" class="nav-link nav-link--discord">
+          <span>Join Community</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero__container">
+        <div class="hero__header gs-reveal">
+          <span class="badge-ios">Built for iOS 27</span>
+          <h1 class="hero__title">
+            The tasks app that<br />
+            roasts you<br />
+            into getting things done
+          </h1>
+          <a href="#download" class="btn-appstore">
+            <span>Download on the App Store</span>
+            <svg width="16" height="19" viewBox="0 0 170 170" fill="currentColor">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.06-7.9-9.18-16.82-12.37-26.75-3.19-9.94-4.78-19.37-4.78-28.3 0-10.74 2.69-19.65 8.07-26.73 5.38-7.08 12.16-10.72 20.34-10.92 4.14 0 8.95 1.24 14.43 3.71 5.48 2.48 9.01 3.75 10.58 3.82 1.23 0 5.15-1.46 11.76-4.37 6.61-2.91 12.19-4.17 16.74-3.79 12.53 1.01 21.95 5.96 28.26 14.86-11.2 6.8-16.72 16.21-16.56 28.24.14 9.42 3.66 17.26 10.56 23.51 4.78 4.38 10.35 7.12 16.7 8.21-1.36 4.24-2.88 8.31-4.57 12.21zM119.22 31.9c0 7.42-2.71 14.35-8.13 20.78-6.53 7.64-14.45 12.05-23.06 11.36-.12-.92-.19-1.91-.19-2.96 0-7.13 3.1-14.76 8.61-21.01 2.75-3.16 6.26-5.79 10.51-7.89 4.25-2.09 8.27-3.25 12.06-3.47.13 1.11.2 2.17.2 3.19z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-stage">
+          <div class="sticker sticker--eyes gs-float" data-speed="0.8">
+            <svg width="64" height="36" viewBox="0 0 64 36" fill="none">
+              <rect x="2" y="2" width="60" height="32" rx="16" fill="#FFFFFF" stroke="#111" stroke-width="2"/>
+              <ellipse cx="21" cy="18" rx="9" ry="11" fill="#FFF" stroke="#111" stroke-width="2.5"/>
+              <ellipse cx="43" cy="18" rx="9" ry="11" fill="#FFF" stroke="#111" stroke-width="2.5"/>
+              <circle cx="24" cy="18" r="4.5" fill="#111"/>
+              <circle cx="46" cy="18" r="4.5" fill="#111"/>
+              <path d="M12 10L29 14" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M52 10L35 14" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="sticker sticker--wave gs-float" data-speed="1.2">
+            <div class="wave-badge">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="sticker sticker--chat gs-float" data-speed="0.9">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <circle cx="28" cy="28" r="26" fill="#FFFFFF"/>
+              <circle cx="28" cy="28" r="22" fill="#4A90E2"/>
+              <path d="M18 24C18 20.6863 22.4772 18 28 18C33.5228 18 38 20.6863 38 24C38 27.3137 33.5228 30 28 30C26.5 30 25.1 29.8 23.8 29.4L19 32L20.4 27.8C18.9 26.8 18 25.5 18 24Z" stroke="#FFF" stroke-width="2.2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="sticker sticker--tasks-pill gs-float" data-speed="1.1">
+            <div class="pill-sticker">
+              <strong>5 TASKS</strong>
+              <span>NOT 50</span>
+            </div>
+          </div>
+
+          <div class="sticker sticker--ondevice gs-float" data-speed="0.85">
+            <div class="pill-sticker pill-sticker--tilt-left">
+              <strong>ON-DEVICE</strong>
+              <span>INTELLIGENCE</span>
+            </div>
+          </div>
+
+          <div class="hero-notifications gs-stagger-left">
+            <div class="notif-label">
+              <span class="dot-orange"></span>
+              <span>Roast Notifications</span>
+            </div>
+
+            <div class="notif-card">
+              <div class="notif-card__avatar"><span class="mini-rudy">😠</span></div>
+              <div class="notif-card__body">
+                <div class="notif-card__top"><strong>Uncle Rudy</strong><span>2m ago</span></div>
+                <p>You're the biggest liability issue than the UI audit that's pending.</p>
+              </div>
+            </div>
+
+            <div class="notif-card">
+              <div class="notif-card__avatar"><span class="mini-rudy">🤨</span></div>
+              <div class="notif-card__body">
+                <div class="notif-card__top"><strong>Uncle Rudy</strong><span>14m ago</span></div>
+                <p>Keep avoiding the invoice. Your client loves the silence.</p>
+              </div>
+            </div>
+
+            <div class="notif-card notif-card--faded">
+              <div class="notif-card__avatar"><span class="mini-rudy">🙄</span></div>
+              <div class="notif-card__body">
+                <div class="notif-card__top"><strong>Uncle Rudy</strong><span>1h ago</span></div>
+                <p>Oh sure, take a nap. The tasks will do themselves.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="iphone-frame gs-hero-phone">
+            <div class="iphone-notch"><div class="dynamic-island"></div></div>
+            <div class="iphone-screen">
+              <div class="app-header-art">
+                <div class="app-statusbar">
+                  <span>9:41</span>
+                  <div class="status-icons"><span>5G</span><span>100%</span></div>
+                </div>
+                <div class="app-sun"></div>
+                <div class="app-speech-bubble">Keep procrastinating, your debt loves it.</div>
+                <div class="app-rudy-character">
+                  <svg viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 140C25 108 55 96 90 96C125 96 155 108 155 140H25Z" fill="#6D4685" stroke="#1E1626" stroke-width="3"/>
+                    <path d="M45 122C65 114 115 114 135 122C138 130 130 138 115 138H65C50 138 42 130 45 122Z" fill="#5B3870" stroke="#1E1626" stroke-width="3"/>
+                    <path d="M58 48C58 27 72 16 90 16C108 16 122 27 122 48V74C122 92 108 104 90 104C72 104 58 92 58 74V48Z" fill="#F4B9A4" stroke="#1E1626" stroke-width="3"/>
+                    <path d="M56 42C51 42 49 49 52 57C54 62 58 61 58 61V42H56Z" fill="#2D1A18" stroke="#1E1626" stroke-width="2.5"/>
+                    <path d="M124 42C129 42 131 49 128 57C126 62 122 61 122 61V42H124Z" fill="#2D1A18" stroke="#1E1626" stroke-width="2.5"/>
+                    <circle cx="76" cy="54" r="12" fill="#FFFFFF" stroke="#1E1626" stroke-width="3"/>
+                    <circle cx="104" cy="54" r="12" fill="#FFFFFF" stroke="#1E1626" stroke-width="3"/>
+                    <line x1="88" y1="54" x2="92" y2="54" stroke="#1E1626" stroke-width="3"/>
+                    <circle cx="78" cy="55" r="2.5" fill="#1E1626"/>
+                    <circle cx="102" cy="55" r="2.5" fill="#1E1626"/>
+                    <path d="M64 41L85 45" stroke="#2D1A18" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M116 41L95 45" stroke="#2D1A18" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M88 60C86 66 87 70 91 70" stroke="#9E6250" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M80 83C85 79 95 79 100 83" stroke="#5A2D27" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="app-tasks-body">
+                <div class="app-tasks-header">
+                  <h2>Today</h2>
+                  <span class="app-tasks-sub">3 TASKS LEFT</span>
+                </div>
+                <ul class="app-task-list">
+                  <li class="app-task-item">
+                    <span class="task-radio"></span>
+                    <div class="task-info">
+                      <strong>Send the final screens before standup</strong>
+                      <span>Design • High Priority</span>
+                    </div>
+                  </li>
+                  <li class="app-task-item">
+                    <span class="task-radio"></span>
+                    <div class="task-info">
+                      <strong>Pay the credit card bill</strong>
+                      <span>Finance • Overdue 2d</span>
+                    </div>
+                  </li>
+                  <li class="app-task-item app-task-item--muted">
+                    <span class="task-radio"></span>
+                    <div class="task-info">
+                      <strong>Call mom back</strong>
+                      <span>Personal</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flame-graphic flame-graphic--left gs-flame" aria-hidden="true">
+            <svg viewBox="0 0 180 180" fill="none">
+              <path d="M90 10C90 10 135 55 135 102C135 135 112 162 82 162C52 162 30 138 30 106C30 84 44 65 44 65C44 65 46 82 58 84C52 56 90 10 90 10Z" fill="#FF3B1D" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+              <path d="M86 58C86 58 112 86 112 114C112 134 98 150 80 150C62 150 50 136 50 116C50 102 60 90 60 90C60 90 62 100 70 102C66 84 86 58 86 58Z" fill="#FF9F1C"/>
+            </svg>
+          </div>
+
+          <div class="flame-graphic flame-graphic--right gs-flame" aria-hidden="true">
+            <svg viewBox="0 0 220 220" fill="none">
+              <path d="M110 15C110 15 170 70 170 128C170 168 140 198 102 198C64 198 36 168 36 128C36 100 54 76 54 76C54 76 56 98 72 100C64 66 110 15 110 15Z" fill="#FF3B1D" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round"/>
+              <path d="M106 72C106 72 140 108 140 142C140 166 122 184 100 184C78 184 62 168 62 144C62 126 75 110 75 110C75 110 77 124 88 126C82 104 106 72 106 72Z" fill="#FFB703"/>
+            </svg>
+          </div>
+
+          <div class="grandma-widget gs-float-card">
+            <div class="grandma-widget__content">
+              <div class="widget-dots">
+                <span class="dot-green"></span><span class="dot-green"></span><span class="dot-green"></span>
+                <span class="dot-gray"></span><span class="dot-gray"></span>
+              </div>
+              <p>Grandma's waiting. Every missed day moves a cousin above you in the will.</p>
+            </div>
+            <div class="grandma-widget__avatar">
+              <svg viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="36" fill="#2A2433"/>
+                <path d="M16 76C16 60 28 54 40 54C52 54 64 60 64 76H16Z" fill="#6D4685"/>
+                <circle cx="40" cy="36" r="16" fill="#F4B9A4"/>
+                <circle cx="34" cy="35" r="5" fill="#FFF" stroke="#1E1626" stroke-width="1.5"/>
+                <circle cx="46" cy="35" r="5" fill="#FFF" stroke="#1E1626" stroke-width="1.5"/>
+                <circle cx="35" cy="35" r="1.3" fill="#1E1626"/>
+                <circle cx="45" cy="35" r="1.3" fill="#1E1626"/>
+                <path d="M35 44C38 42 42 42 45 44" stroke="#5A2D27" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="hero-caption"><span>⚡ Works Offline &amp; Private</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="multimodal" id="story">
+      <div class="container">
+        <div class="section-heading gs-reveal">
+          <h2>Talk to it. Point at it. Done.</h2>
+          <p>First iOS 27 app to ship with a Product-specific model.</p>
+        </div>
+
+        <div class="multimodal-grid">
+          <article class="feature-showcase gs-reveal">
+            <div class="phones-cluster">
+              <div class="mini-phone mini-phone--back">
+                <div class="mini-phone__screen">
+                  <div class="mini-list-title">Extracted Tasks</div>
+                  <div class="mini-task">✓ Review Q4 slides</div>
+                  <div class="mini-task">✓ Buy coffee beans</div>
+                  <div class="mini-task">✓ Book dentist</div>
+                </div>
+              </div>
+              <div class="mini-phone mini-phone--front">
+                <div class="mini-phone__camera">
+                  <div class="camera-note"><span>Call Sarah</span><span>Fix bug #42</span></div>
+                  <div class="camera-reticle"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-showcase__copy">
+              <div class="bracket-title">
+                <span class="bracket">[</span><h3>Snap</h3><span class="bracket">]</span><h3>your to-do's.</h3>
+              </div>
+              <p>
+                iOS 27's Foundation Model, built on a whiteboard, schedules, or sticky notes. Point your camera and it scans. Meets you wherever your list already is.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-showcase gs-reveal">
+            <div class="phones-cluster phones-cluster--single">
+              <div class="mini-phone mini-phone--voice">
+                <div class="voice-header">
+                  <div class="voice-rudy-badge">😠</div>
+                  <span>Listening...</span>
+                </div>
+                <div class="voice-transcript">"Remind me to finish the landing page before Friday or I'm cooked..."</div>
+                <div class="voice-waveform">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-showcase__copy">
+              <div class="wave-title">
+                <h3>Ya</h3>
+                <span class="inline-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <h3>ap with Uncle Rudy</h3>
+              </div>
+              <p>
+                Our ~300M model, running locally on the Neural Engine. No servers, just structured tasks. No cloud, no found. You.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-cta gs-reveal">
+          <a href="#download" class="btn-appstore">
+            <span>Download on the App Store</span>
+            <svg width="16" height="19" viewBox="0 0 170 170" fill="currentColor">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.06-7.9-9.18-16.82-12.37-26.75-3.19-9.94-4.78-19.37-4.78-28.3 0-10.74 2.69-19.65 8.07-26.73 5.38-7.08 12.16-10.72 20.34-10.92 4.14 0 8.95 1.24 14.43 3.71 5.48 2.48 9.01 3.75 10.58 3.82 1.23 0 5.15-1.46 11.76-4.37 6.61-2.91 12.19-4.17 16.74-3.79 12.53 1.01 21.95 5.96 28.26 14.86-11.2 6.8-16.72 16.21-16.56 28.24.14 9.42 3.66 17.26 10.56 23.51 4.78 4.38 10.35 7.12 16.7 8.21-1.36 4.24-2.88 8.31-4.57 12.21zM119.22 31.9c0 7.42-2.71 14.35-8.13 20.78-6.53 7.64-14.45 12.05-23.06 11.36-.12-.92-.19-1.91-.19-2.96 0-7.13 3.1-14.76 8.61-21.01 2.75-3.16 6.26-5.79 10.51-7.89 4.25-2.09 8.27-3.25 12.06-3.47.13 1.11.2 2.17.2 3.19z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bento-section" id="intelligence">
+      <div class="container">
+        <div class="section-heading gs-reveal">
+          <h2>
+            We built the complete iOS 27<br />
+            experience<br />
+            around a new kind of<br />
+            intelligence
+          </h2>
+          <p>
+            Small, private, and product-specific. Because the<br />
+            best intelligence isn't built for everything. It's built for<br />
+            *the* thing.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-model">
+              <div class="model-chip"><span>yap-dev-300m-v4.bin</span><span class="chip-pill">ANE</span></div>
+              <div class="model-tokens"><span>task</span><span>→</span><span>roast</span><span>→</span><span>done</span></div>
+            </div>
+            <p class="bento-card__label">Custom ~300M parameter "Yap" language model run on Neural Engine</p>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-spotlight">
+              <div class="spotlight-bar"><span>🔍</span><span>overdue design tasks</span></div>
+              <div class="spotlight-result"><span class="badge-orange">Rudy</span><span>Ship landing page UI</span></div>
+            </div>
+            <p class="bento-card__label">Spotlight Semantic Index</p>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-profiles">
+              <div class="profile-item"><div class="avatar-circle">😤</div><span>Tough Love</span></div>
+              <div class="profile-item profile-item--active"><div class="avatar-circle">🤬</div><span>Sarcastic</span></div>
+              <div class="profile-item"><div class="avatar-circle">🙄</div><span>Passive</span></div>
+            </div>
+            <p class="bento-card__label">Speaker Profiles</p>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-island">
+              <div class="dynamic-pill"><span class="pill-avatar">😠</span><span class="pill-timer">14:29</span><span class="pill-ring"></span></div>
+            </div>
+            <p class="bento-card__label">Live Activities on Dynamic Island</p>
+          </div>
+
+          <div class="bento-card bento-card--tall gs-bento">
+            <div class="bento-card__visual visual-reactions">
+              <div class="reaction-stickers-grid">
+                <span class="r-sticker">😠</span><span class="r-sticker">🤦‍♂️</span>
+                <span class="r-sticker">🔥</span><span class="r-sticker">💀</span>
+                <span class="r-sticker">🙄</span><span class="r-sticker">👏</span>
+              </div>
+            </div>
+            <p class="bento-card__label">Reactions per task, generated on-device</p>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-apple-intel">
+              <div class="app-icons-row">
+                <div class="ios-icon ios-icon--blue">📅</div>
+                <div class="ios-icon ios-icon--orange">🔥</div>
+                <div class="ios-icon ios-icon--purple">✨</div>
+              </div>
+            </div>
+            <p class="bento-card__label">Shipped with Apple Intelligence</p>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-notif">
+              <div class="mini-banner">
+                <span class="badge-orange">Rudy</span>
+                <div><strong>Uncle Rudy</strong><p>Still scrolling? Must be nice.</p></div>
+              </div>
+            </div>
+            <p class="bento-card__label">A self-improving, on-device notification system</p>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-snap">
+              <div class="snap-preview">
+                <div class="snap-box">Buy milk</div><div class="snap-arrow">→</div><div class="snap-done">✓ Added</div>
+              </div>
+            </div>
+            <p class="bento-card__label">Visual Intelligence with "Snap"</p>
+          </div>
+
+          <div class="bento-card bento-card--wide gs-bento">
+            <div class="bento-card__visual visual-actions">
+              <div class="action-pill-row">
+                <span class="act-chip">Shortcuts</span>
+                <span class="act-chip">Focus Filters</span>
+                <span class="act-chip">Siri Intents</span>
+                <span class="act-chip">Widgets</span>
+              </div>
+            </div>
+            <p class="bento-card__label">Foundation-level iOS 27 actions</p>
+          </div>
+
+          <div class="bento-card-stack gs-bento">
+            <div class="bento-card bento-card--compact">
+              <div class="compact-row"><span class="compact-icon compact-icon--yellow">📋</span><p class="bento-card__label">Works with Reminders</p></div>
+            </div>
+            <div class="bento-card bento-card--compact">
+              <div class="compact-row"><span class="compact-icon compact-icon--teal">💠</span><p class="bento-card__label">Shipped with Core ML</p></div>
+            </div>
+          </div>
+
+          <div class="bento-card gs-bento">
+            <div class="bento-card__visual visual-siri">
+              <div class="siri-glow-bar"><span>"Hey Siri, ask Rudy what I'm ignoring"</span></div>
+            </div>
+            <p class="bento-card__label">Deep system-level Siri integration</p>
+          </div>
+        </div>
+
+        <div class="section-cta gs-reveal">
+          <a href="#download" class="btn-appstore">
+            <span>Download on the App Store</span>
+            <svg width="16" height="19" viewBox="0 0 170 170" fill="currentColor">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.06-7.9-9.18-16.82-12.37-26.75-3.19-9.94-4.78-19.37-4.78-28.3 0-10.74 2.69-19.65 8.07-26.73 5.38-7.08 12.16-10.72 20.34-10.92 4.14 0 8.95 1.24 14.43 3.71 5.48 2.48 9.01 3.75 10.58 3.82 1.23 0 5.15-1.46 11.76-4.37 6.61-2.91 12.19-4.17 16.74-3.79 12.53 1.01 21.95 5.96 28.26 14.86-11.2 6.8-16.72 16.21-16.56 28.24.14 9.42 3.66 17.26 10.56 23.51 4.78 4.38 10.35 7.12 16.7 8.21-1.36 4.24-2.88 8.31-4.57 12.21zM119.22 31.9c0 7.42-2.71 14.35-8.13 20.78-6.53 7.64-14.45 12.05-23.06 11.36-.12-.92-.19-1.91-.19-2.96 0-7.13 3.1-14.76 8.61-21.01 2.75-3.16 6.26-5.79 10.51-7.89 4.25-2.09 8.27-3.25 12.06-3.47.13 1.11.2 2.17.2 3.19z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-hero" id="download">
+      <div class="footer-watermark" aria-hidden="true"><span>Uncle</span><span>Rudy</span></div>
+      <div class="footer-character gs-footer-rudy">
+        <div class="excuse-bubble">What's your<br />excuse now?</div>
+        <svg class="rudy-bust-svg" viewBox="0 0 260 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M58 122C58 72 88 46 130 46C172 46 202 72 202 122V188C202 232 172 258 130 258C88 258 58 232 58 188V122Z" fill="#F4B9A4" stroke="#FFFFFF" stroke-width="14" stroke-linejoin="round"/>
+          <path d="M62 124C62 76 90 50 130 50C170 50 198 76 198 124V186C198 228 170 254 130 254C90 254 62 228 62 186V124Z" fill="#F4B9A4" stroke="#1E1626" stroke-width="4"/>
+          <path d="M58 110C48 110 44 126 50 144C54 156 62 154 62 154V110H58Z" fill="#2D1A18" stroke="#1E1626" stroke-width="3.5"/>
+          <path d="M202 110C212 110 216 126 210 144C206 156 198 154 198 154V110H202Z" fill="#2D1A18" stroke="#1E1626" stroke-width="3.5"/>
+          <circle cx="100" cy="138" r="24" fill="#FFFFFF" stroke="#1E1626" stroke-width="4.5"/>
+          <circle cx="160" cy="138" r="24" fill="#FFFFFF" stroke="#1E1626" stroke-width="4.5"/>
+          <line x1="124" y1="138" x2="136" y2="138" stroke="#1E1626" stroke-width="4.5"/>
+          <circle cx="104" cy="138" r="4.5" fill="#1E1626"/>
+          <circle cx="156" cy="138" r="4.5" fill="#1E1626"/>
+          <path d="M76 112L118 120" stroke="#2D1A18" stroke-width="5.5" stroke-linecap="round"/>
+          <path d="M184 112L142 120" stroke="#2D1A18" stroke-width="5.5" stroke-linecap="round"/>
+          <path d="M126 150C122 164 125 172 134 172" stroke="#9E6250" stroke-width="4" stroke-linecap="round"/>
+          <path d="M108 202C120 192 140 192 152 202" stroke="#5A2D27" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M116 226C125 230 135 230 144 226" stroke="#C98873" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="footer-credit">
+        <span class="studio-badge">01</span>
+        <span>Crafted with <strong>AI</strong> by Conscious Engines Studio.</span>
+      </div>
+      <div class="footer-actions">
+        <a href="#download" class="btn-appstore btn-appstore--sm">
+          <span>Download on the App Store</span>
+          <svg width="14" height="16" viewBox="0 0 170 170" fill="currentColor">
+            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.06-7.9-9.18-16.82-12.37-26.75-3.19-9.94-4.78-19.37-4.78-28.3 0-10.74 2.69-19.65 8.07-26.73 5.38-7.08 12.16-10.72 20.34-10.92 4.14 0 8.95 1.24 14.43 3.71 5.48 2.48 9.01 3.75 10.58 3.82 1.23 0 5.15-1.46 11.76-4.37 6.61-2.91 12.19-4.17 16.74-3.79 12.53 1.01 21.95 5.96 28.26 14.86-11.2 6.8-16.72 16.21-16.56 28.24.14 9.42 3.66 17.26 10.56 23.51 4.78 4.38 10.35 7.12 16.7 8.21-1.36 4.24-2.88 8.31-4.57 12.21zM119.22 31.9c0 7.42-2.71 14.35-8.13 20.78-6.53 7.64-14.45 12.05-23.06 11.36-.12-.92-.19-1.91-.19-2.96 0-7.13 3.1-14.76 8.61-21.01 2.75-3.16 6.26-5.79 10.51-7.89 4.25-2.09 8.27-3.25 12.06-3.47.13 1.11.2 2.17.2 3.19z"/>
+          </svg>
+        </a>
+        <div class="social-links">
+          <a href="#" aria-label="X (Twitter)" class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="Discord" class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
